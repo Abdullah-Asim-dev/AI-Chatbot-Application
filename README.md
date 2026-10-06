@@ -1,37 +1,67 @@
-# Nexora AI
+# 🤖 Nexora AI
 
-> A modern full-stack AI workspace built for intelligent conversations, persistent chat history, authentication, subscription management, and AI-powered assistance.
+> **A modern full-stack AI workspace built for intelligent conversations, persistent chat history, authentication, subscriptions, and AI-powered assistance.**
 
-Nexora AI is a full-stack AI chatbot and workspace application designed with a modern SaaS architecture. It combines a responsive Next.js frontend with a Node.js/Express backend, MongoDB persistence, JWT authentication, Gemini-powered AI responses, conversation management, and a manual payment verification system for Pro subscriptions.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-24-339933?style=for-the-badge&logo=node.js" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express.js-5-000000?style=for-the-badge&logo=express" alt="Express.js" />
+  <img src="https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google" alt="Gemini AI" />
+</p>
 
-The project is structured to provide a strong foundation for future capabilities such as streaming responses, document analysis, web search, AI tools, voice interaction, RAG, agents, and multimodal workflows.
-
----
-
-## Overview
-
-Nexora AI is more than a basic chatbot interface.
-
-The application is designed around a **workspace-based AI experience** where users can:
-
-* Create and continue conversations
-* Persist conversations in MongoDB
-* Authenticate securely with JWT
-* Use a Free plan with a defined message limit
-* Upgrade to Nexora Pro
-* Submit payment transaction details
-* Allow an administrator to manually verify payments
-* Receive a 30-day Pro subscription after successful verification
-* Use a modern responsive AI workspace interface
-* Select files through the chat composer for future AI file-processing capabilities
-
-The architecture separates the frontend presentation layer, backend API layer, business logic, database models, and AI service integration.
+<p align="center">
+  <a href="https://ai-chatbot-application-teal.vercel.app/">🌐 Live Application</a>
+  •
+  <a href="https://ai-chatbot-application-nam9.onrender.com">⚙️ Backend API</a>
+</p>
 
 ---
 
-# Key Features
+## 📌 Overview
 
-## AI Chat
+**Nexora AI** is a full-stack AI chatbot and workspace application designed with a modern SaaS architecture.
+
+It combines:
+
+* ⚡ Next.js frontend
+* 🧠 Gemini-powered AI
+* 🔐 JWT authentication
+* 💾 MongoDB persistence
+* 💬 Persistent conversations
+* 💳 Free and Pro subscription system
+* 💰 Manual payment verification
+* 📱 Responsive AI workspace
+* 📎 File selection interface
+* 🛡️ Server-side authorization and validation
+
+The architecture is designed to provide a strong foundation for future AI capabilities such as streaming responses, document intelligence, RAG, web search, voice interaction, AI tools, agents, and multimodal workflows.
+
+---
+
+## 🌐 Live Deployment
+
+| Service  | Platform      | Status        |
+| -------- | ------------- | ------------- |
+| Frontend | Vercel        | 🟢 Live       |
+| Backend  | Render        | 🟢 Live       |
+| Database | MongoDB       | 🟢 Connected  |
+| AI       | Google Gemini | 🟢 Integrated |
+
+### 🔗 Links
+
+**Frontend:**
+https://ai-chatbot-application-teal.vercel.app/
+
+**Backend:**
+https://ai-chatbot-application-nam9.onrender.com
+
+---
+
+# ✨ Key Features
+
+## 🧠 AI Chat
 
 * Gemini-powered conversational AI
 * Multi-turn conversation context
@@ -40,59 +70,65 @@ The architecture separates the frontend presentation layer, backend API layer, b
 * Existing conversation retrieval
 * Conversation deletion
 * Loading and error states
-* AI response handling
 * Authentication-aware chat requests
+* AI response handling
 
-## Authentication
+---
+
+## 🔐 Authentication
 
 * User registration
 * User login
 * JWT-based authentication
 * Protected API routes
 * Authenticated user retrieval
-* Token validation middleware
-* Automatic handling of expired/invalid authentication
+* JWT validation middleware
+* Invalid/expired token handling
 
-## Conversation Management
+---
+
+## 💬 Conversation Management
 
 Users can:
 
-* Start a new chat
+* Create a new chat
 * Continue previous conversations
 * View conversation history
 * Open individual conversations
 * Delete conversations
 * Persist messages between sessions
 
-Each conversation belongs to a specific authenticated user.
-
-## Free & Pro Plans
-
-Nexora AI currently uses a two-tier subscription model.
-
-### Free
-
-* 15 lifetime successful AI messages
-* Access to the core chatbot
-* Conversation persistence
-* Upgrade option after reaching the limit
-
-### Pro
-
-* Rs. 999
-* 30-day subscription
-* Unlimited AI messages while the subscription is active
-* No message counting for Pro users
-
-Expired Pro subscriptions are automatically downgraded to the Free plan.
+Every conversation is associated with its authenticated user.
 
 ---
 
-# Payment System
+# 💎 Free & Pro Plans
 
-Nexora AI includes a manual payment verification workflow designed for the current MVP.
+Nexora AI currently uses a two-tier subscription model.
 
-Supported providers:
+### 🆓 Free
+
+* 15 successful AI messages
+* Core AI chatbot access
+* Conversation persistence
+* Upgrade option after reaching the limit
+
+### 🚀 Pro
+
+* **Rs. 999**
+* **30-day subscription**
+* Unlimited AI messages while active
+* No Free-plan message counting
+
+Expired Pro subscriptions automatically return to the Free plan.
+
+---
+
+# 💳 Payment System
+
+Nexora AI includes a manual payment verification workflow for the current MVP.
+
+### Supported Providers
 
 * Easypaisa
 * Payoneer
@@ -109,19 +145,19 @@ Select Pro Plan
 Create Payment
   │
   ▼
-Payment stored as "pending"
+Payment stored as Pending
   │
   ▼
 User completes payment externally
   │
   ▼
-User submits transaction/reference ID
+Transaction ID submitted
   │
   ▼
 Admin reviews payment
   │
   ▼
-Admin enters actual received amount
+Admin enters received amount
   │
   ├── < Rs. 999 ──► Reject
   │
@@ -134,72 +170,59 @@ Admin enters actual received amount
                   30-day access
 ```
 
-The minimum payment requirement is enforced on the backend as well as the frontend.
+The minimum payment requirement is validated on both the frontend and backend.
 
-This is important because frontend validation alone cannot be trusted for payment authorization.
-
-> The current system uses manual verification. It does not claim automatic verification from Easypaisa or Payoneer.
+> **Note:** The current MVP uses manual payment verification. It does not claim automatic verification from Easypaisa or Payoneer.
 
 ---
 
-# System Architecture
+# 🏗️ System Architecture
 
 ```text
-                         ┌───────────────────────┐
-                         │       User            │
-                         │   Browser / Mobile    │
-                         └───────────┬───────────┘
-                                     │
-                                     ▼
-                    ┌────────────────────────────┐
-                    │       Next.js Frontend     │
-                    │                            │
-                    │  ┌──────────────────────┐  │
-                    │  │ Authentication UI     │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Chat Workspace        │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Conversation History  │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Profile / Pricing     │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Upgrade / Payments    │  │
-                    │  └──────────────────────┘  │
-                    └─────────────┬──────────────┘
+                         ┌──────────────────────┐
+                         │        User          │
+                         │   Browser / Mobile   │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                     ┌──────────────────────────┐
+                     │      Next.js Frontend    │
+                     │                          │
+                     │  Authentication         │
+                     │  Chat Workspace          │
+                     │  Conversations           │
+                     │  Profile / Pricing       │
+                     │  Upgrade / Payments      │
+                     └────────────┬─────────────┘
                                   │
-                         HTTP / REST API
+                              REST API
                                   │
                                   ▼
-                    ┌────────────────────────────┐
-                    │     Express Backend        │
-                    │                            │
-                    │  ┌──────────────────────┐  │
-                    │  │ Authentication       │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Chat Controller      │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Payment Controller   │  │
-                    │  ├──────────────────────┤  │
-                    │  │ Auth Middleware      │  │
-                    │  └──────────────────────┘  │
-                    └───────┬───────────┬────────┘
-                            │           │
-                 ┌──────────┘           └──────────┐
-                 ▼                                 ▼
-       ┌────────────────────┐             ┌──────────────────┐
-       │      MongoDB       │             │   Gemini API     │
-       │                    │             │                  │
-       │ Users              │             │ AI Responses     │
-       │ Conversations      │             │ Chat Context     │
-       │ Payments           │             │                  │
-       └────────────────────┘             └──────────────────┘
+                     ┌──────────────────────────┐
+                     │     Express Backend      │
+                     │                          │
+                     │  Authentication          │
+                     │  Chat Controller         │
+                     │  Payment Controller      │
+                     │  Middleware              │
+                     └─────────┬───────┬────────┘
+                               │       │
+                    ┌──────────┘       └──────────┐
+                    ▼                             ▼
+           ┌─────────────────┐           ┌─────────────────┐
+           │     MongoDB     │           │   Gemini API    │
+           │                 │           │                 │
+           │ Users           │           │ AI Responses    │
+           │ Conversations   │           │ Chat Context    │
+           │ Payments        │           │                 │
+           └─────────────────┘           └─────────────────┘
 ```
 
 ---
 
-# Frontend Architecture
+# 🎨 Frontend Architecture
 
-The frontend is built using **Next.js** with a component-driven architecture.
+The frontend is built with **Next.js, React, TypeScript, Tailwind CSS, and Framer Motion**.
 
 ```text
 frontend/
@@ -240,31 +263,29 @@ frontend/
         └── chat.ts
 ```
 
-## Frontend Responsibilities
+### Frontend Responsibilities
 
-The frontend is responsible for:
+The frontend handles:
 
-* Rendering the application UI
-* Managing local UI state
-* Handling authentication state
-* Sending API requests
-* Displaying conversations
-* Managing the active conversation
-* Handling loading states
-* Handling API errors
-* Displaying subscription information
-* Managing the payment submission interface
-* Providing responsive layouts
+* UI rendering
+* Local UI state
+* Authentication state
+* API requests
+* Conversation display
+* Active conversation management
+* Loading states
+* API error handling
+* Subscription information
+* Payment submission interface
+* Responsive layouts
 
-The frontend does **not** make the final decision about authentication, subscription access, or payment validity.
-
-Those decisions are handled by the backend.
+Critical authorization and subscription decisions remain on the backend.
 
 ---
 
-# Chat Workspace Architecture
+# 💬 Chat Workspace
 
-The main chat page acts as the orchestration layer for the chat experience.
+The main chat page acts as the orchestration layer for the AI workspace.
 
 ```text
 ChatPage
@@ -285,11 +306,11 @@ ChatPage
    └── ChatComposer
           ├── Text Input
           ├── File Picker
-          ├── AI Tools
+          ├── AI Controls
           └── Send
 ```
 
-The `ChatPage` manages the primary chat state:
+The `ChatPage` manages:
 
 * Current user
 * Conversations
@@ -300,13 +321,9 @@ The `ChatPage` manages the primary chat state:
 * Free-plan limit state
 * Mobile sidebar state
 
-This keeps the major application workflow centralized while the UI itself remains componentized.
-
 ---
 
-# Chat Request Lifecycle
-
-When a user sends a message:
+# 🔄 Chat Request Lifecycle
 
 ```text
 User enters message
@@ -324,45 +341,40 @@ sendChatMessage()
 POST /api/chat
         │
         ▼
-JWT Authentication Middleware
+JWT Authentication
         │
         ▼
 Chat Controller
         │
-        ├── Validate user
-        │
-        ├── Check subscription
-        │
-        ├── Check Free limit
-        │
-        ├── Build conversation context
-        │
-        ▼
-Gemini Service
-        │
-        ▼
-Gemini Model
-        │
-        ▼
-AI Response
-        │
-        ▼
-Conversation saved in MongoDB
-        │
-        ▼
-Response returned to frontend
-        │
-        ▼
-MessageList updated
+        ├── Validate User
+        ├── Check Subscription
+        ├── Check Free Limit
+        └── Build Context
+                │
+                ▼
+          Gemini Service
+                │
+                ▼
+           Gemini Model
+                │
+                ▼
+           AI Response
+                │
+                ▼
+       Save to MongoDB
+                │
+                ▼
+        Response to Client
+                │
+                ▼
+        Update MessageList
 ```
 
-This separation allows the AI provider to be changed later without rewriting the entire frontend.
+The AI provider is isolated behind a service layer, making it easier to change or expand AI providers later.
 
 ---
 
-# Backend Architecture
-
-The backend follows a layered Express architecture.
+# ⚙️ Backend Architecture
 
 ```text
 backend/
@@ -400,11 +412,11 @@ backend/
 
 ---
 
-# Backend Layers
+# 🧩 Backend Layers
 
-## Routes
+## 🛣️ Routes
 
-Routes define the public API endpoints and connect requests to controllers.
+The API is organized into three main route groups:
 
 ```text
 /api/auth
@@ -412,35 +424,31 @@ Routes define the public API endpoints and connect requests to controllers.
 /api/payment
 ```
 
-Protected routes use the authentication middleware.
+Protected endpoints use authentication middleware.
 
 ---
 
-## Middleware
+## 🛡️ Middleware
 
 ### Authentication Middleware
 
-The authentication middleware:
+The middleware:
 
 1. Reads the `Authorization` header
 2. Extracts the Bearer token
 3. Verifies the JWT
 4. Extracts the authenticated user ID
-5. Attaches the user information to `req.user`
-
-This ensures that protected resources are associated with the authenticated account.
+5. Attaches user information to `req.user`
 
 ### Error Middleware
 
-The centralized error middleware provides a consistent API error structure and prevents individual controllers from having to format every server error differently.
+A centralized error handler provides consistent API error responses and keeps controllers cleaner.
 
 ---
 
-# Controllers
+# 🎯 Controllers
 
-Controllers contain the application's business logic.
-
-### Auth Controller
+## Auth Controller
 
 Responsible for:
 
@@ -450,64 +458,65 @@ Responsible for:
 * Subscription expiration handling
 * User plan information
 
-### Chat Controller
+## Chat Controller
 
 Responsible for:
 
 * Sending AI messages
-* Conversation creation
-* Conversation retrieval
-* Conversation listing
-* Conversation deletion
+* Creating conversations
+* Retrieving conversations
+* Listing conversations
+* Deleting conversations
 * Free-plan limits
 * Pro subscription access
 
-### Payment Controller
+## Payment Controller
 
 Responsible for:
 
-* Creating payment records
-* Receiving transaction IDs
-* Fetching pending payments
-* Manual payment verification
-* Activating Pro subscriptions
+* Payment creation
+* Transaction submission
+* Pending payment retrieval
+* Manual verification
+* Pro activation
 * Payment history
 
 ---
 
-# Service Layer
+# 🧠 AI Service Layer
 
-The Gemini integration is isolated inside:
+Gemini integration is isolated inside:
 
 ```text
 services/gemini.service.js
 ```
 
-This abstraction prevents the controllers from being tightly coupled to the AI provider.
+The service:
 
-The service receives conversation messages, builds the required Gemini chat context, sends the latest message to the model, and returns the generated response.
+* Receives conversation messages
+* Builds Gemini conversation context
+* Sends the latest message
+* Returns the generated response
 
-This architecture makes it easier to introduce another model provider in the future.
+This keeps the controllers independent from the AI provider and makes future provider changes easier.
 
 ---
 
-# Database Architecture
+# 🗄️ Database Architecture
 
 MongoDB is used as the primary database through Mongoose.
-
-The application currently uses three core collections.
 
 ```text
 MongoDB
 │
 ├── users
-│
 ├── conversations
-│
 └── payments
 ```
 
-## User
+---
+
+## 👤 User Model
 
 Stores:
 
@@ -521,7 +530,7 @@ Stores:
 * Subscription end date
 * Timestamps
 
-Important subscription fields:
+Important fields:
 
 ```text
 plan
@@ -533,9 +542,9 @@ subscriptionEnd
 
 ---
 
-## Conversation
+## 💬 Conversation Model
 
-A conversation belongs to one authenticated user.
+Each conversation belongs to one authenticated user.
 
 ```text
 Conversation
@@ -550,20 +559,18 @@ Conversation
 └── timestamps
 ```
 
-Message roles are restricted to:
+Message roles:
 
 ```text
 user
 assistant
 ```
 
-This creates a persistent conversation structure instead of treating every AI request as an isolated prompt.
-
 ---
 
-## Payment
+## 💰 Payment Model
 
-Payment records contain:
+Stores:
 
 * User
 * Plan
@@ -587,11 +594,9 @@ cancelled
 
 ---
 
-# Subscription Logic
+# 📊 Subscription Logic
 
-The subscription system is intentionally enforced on the server.
-
-## Free User
+## 🆓 Free User
 
 ```text
 messageCount < 15
@@ -600,78 +605,72 @@ messageCount < 15
      Allowed
         │
         ▼
-Successful AI response
+Successful AI Response
         │
         ▼
 messageCount + 1
 ```
 
-Once the user reaches 15 successful messages:
+When the limit is reached:
 
 ```text
 messageCount >= 15
         │
         ▼
-Chat locked
+     Chat Locked
         │
         ▼
-Upgrade to Pro
+   Upgrade to Pro
 ```
 
-## Pro User
+## 🚀 Pro User
 
 ```text
-Pro + active subscription
-        │
-        ▼
-Unlimited AI messages
+Active Pro Subscription
+          │
+          ▼
+  Unlimited AI Messages
 ```
 
-Pro messages are not counted against the Free message counter.
-
-## Expired Pro
-
-When the subscription expires:
+## ⏰ Expired Pro
 
 ```text
-Pro
- │
- ▼
-Subscription End < Current Time
- │
- ▼
+Pro Subscription
+       │
+       ▼
+End Date < Current Time
+       │
+       ▼
 Downgrade to Free
- │
- ▼
-Free message rules apply
+       │
+       ▼
+Free Plan Rules Apply
 ```
-
-This prevents expired subscriptions from retaining Pro access indefinitely.
 
 ---
 
-# API Structure
+# 🔌 API Structure
 
-## Authentication
+### Authentication
 
-```text
+```http
 POST /api/auth/register
 POST /api/auth/login
 GET  /api/auth/me
 ```
 
-## Chat
+### Chat
 
-```text
+```http
 POST   /api/chat
 GET    /api/chat
 GET    /api/chat/:conversationId
 DELETE /api/chat/:conversationId
 ```
 
-## Payments
+### Payments
 
-```text
+```http
 POST /api/payment/create
 POST /api/payment/submit-transaction
 GET  /api/payment/history
@@ -680,65 +679,61 @@ GET  /api/payment/admin/pending
 POST /api/payment/verify
 ```
 
-The payment verification endpoints are protected using authentication plus the current MVP admin payment secret mechanism.
-
 ---
 
-# Security Architecture
+# 🔒 Security Architecture
 
-Nexora AI uses multiple layers of protection.
+Nexora AI applies multiple server-side security controls.
 
 ### JWT Authentication
 
-Protected endpoints require a valid Bearer token.
+Protected API endpoints require a valid Bearer token.
 
 ### User Ownership
 
-Conversation and payment queries are scoped to the authenticated user where applicable.
+User-specific conversations and payment records are scoped to the authenticated account.
 
 ### Backend Subscription Validation
 
-The backend, rather than the frontend, decides whether a user can access Pro functionality.
+Subscription access is decided by the backend rather than trusting the frontend.
 
 ### Server-side Payment Validation
 
 The backend validates the actual received amount before activating Pro.
 
 ```text
-receivedAmount < 999
-        │
-        ▼
-     Reject
+receivedAmount < Rs.999
+          │
+          ▼
+        Reject
 ```
 
 ### Environment Variables
 
-Sensitive configuration such as:
+Sensitive values are stored outside the source code:
 
 * Gemini API key
 * MongoDB connection string
 * JWT secret
 * Admin payment secret
 
-is stored outside the source code through environment variables.
-
 ---
 
-# UI / UX Architecture
+# 🎨 UI / UX
 
-Nexora AI follows a premium dark-first SaaS design system.
+Nexora AI follows a premium dark-first SaaS design direction.
 
-### Visual Direction
+### Design Principles
 
-* Dark workspace
-* Glass-inspired surfaces
-* Subtle borders
-* Cyan / blue / violet accents
-* Soft gradients
-* Minimal visual noise
-* Compact navigation
-* Responsive layouts
-* Focused AI workspace experience
+* 🌑 Dark workspace
+* ✨ Glass-inspired surfaces
+* 🔲 Subtle borders
+* ⚡ Cyan / blue / violet accents
+* 🌈 Controlled gradients
+* 📐 Clean spacing
+* 🧭 Compact navigation
+* 📱 Responsive layouts
+* 🎯 Focused AI workspace experience
 
 Core background:
 
@@ -746,20 +741,18 @@ Core background:
 #070A0F
 ```
 
-Primary surfaces use darker layered tones such as:
+Primary surfaces:
 
 ```text
 #0D1117
 #111827
 ```
 
-The UI avoids unnecessary visual complexity while maintaining a premium AI-product feel.
+The interface focuses on usability without unnecessary visual complexity.
 
 ---
 
-# Responsive Design
-
-The interface is designed for both desktop and mobile.
+# 📱 Responsive Design
 
 ### Desktop
 
@@ -768,7 +761,7 @@ The interface is designed for both desktop and mobile.
 │              │ Header                        │
 │   Sidebar    ├───────────────────────────────┤
 │              │                               │
-│ Conversations│        Messages               │
+│ Conversations│           Messages            │
 │              │                               │
 │              ├───────────────────────────────┤
 │              │ Composer                      │
@@ -777,17 +770,17 @@ The interface is designed for both desktop and mobile.
 
 ### Mobile
 
-The sidebar becomes a drawer while the main workspace uses the full available width.
+The sidebar becomes a drawer and the workspace adapts to the available screen width.
 
-The composer and controls adapt to smaller screens without sacrificing the primary chat workflow.
+The composer and controls are optimized for smaller screens while preserving the core chat experience.
 
 ---
 
-# File Attachment Architecture
+# 📎 File Attachment Architecture
 
-The chat composer currently includes a functional file picker.
+The chat composer currently includes a frontend file picker.
 
-Supported file selection includes common development and document formats such as:
+Supported formats include:
 
 ```text
 PDF
@@ -806,75 +799,52 @@ PY
 MD
 ```
 
-Current implementation:
+Current flow:
 
 ```text
 Paperclip
-   │
-   ▼
-Hidden <input type="file">
-   │
-   ▼
+    │
+    ▼
+File Input
+    │
+    ▼
 Selected File
-   │
-   ▼
+    │
+    ▼
 File Preview
-   │
-   ▼
+    │
+    ▼
 Remove / Replace
 ```
 
-The current MVP handles file selection on the frontend.
+### Current MVP Status
 
-The selected file is **not yet processed by the Gemini backend**. This separation intentionally leaves the architecture ready for a future document-processing pipeline.
+The file picker works on the frontend, but the selected file is **not yet processed by Gemini**.
 
----
-
-# Technology Stack
-
-## Frontend
-
-* Next.js
-* React
-* TypeScript
-* Tailwind CSS
-* Framer Motion
-* Lucide React
-
-## Backend
-
-* Node.js
-* Express.js
-* JavaScript
-* JWT
-* Mongoose
-
-## Database
-
-* MongoDB
-
-## AI
-
-* Google Gemini API
-
-## Authentication
-
-* JSON Web Tokens
-* Protected Express middleware
-
-## Payments
-
-* Easypaisa
-* Payoneer
-* Manual transaction verification
+This architecture leaves the application ready for future document-processing and RAG capabilities.
 
 ---
 
-# Project Complexity
+# 🛠️ Technology Stack
 
-Nexora AI is intentionally structured beyond a basic CRUD chatbot.
+| Category       | Technologies               |
+| -------------- | -------------------------- |
+| Frontend       | Next.js, React, TypeScript |
+| Styling        | Tailwind CSS               |
+| Animation      | Framer Motion              |
+| Icons          | Lucide React               |
+| Backend        | Node.js, Express.js        |
+| Database       | MongoDB, Mongoose          |
+| Authentication | JWT                        |
+| AI             | Google Gemini API          |
+| Payments       | Easypaisa, Payoneer        |
+| Deployment     | Vercel, Render             |
 
-The application combines several independent systems:
+---
+
+# 📈 Project Complexity
+
+Nexora AI combines multiple independent systems into one SaaS architecture:
 
 ```text
 Authentication
@@ -911,17 +881,11 @@ Persistent Database
       └── Payments
 ```
 
-This creates a foundation for evolving the application into a larger AI SaaS platform.
-
 ---
 
-# Future Architecture
+# 🚀 Future Roadmap
 
-The current architecture is designed to accommodate additional AI capabilities without replacing the existing core.
-
-Planned expansion areas include:
-
-## Streaming AI
+## ⚡ AI Streaming
 
 ```text
 Client
@@ -939,7 +903,7 @@ Streaming Response
 Live UI Updates
 ```
 
-## Document Intelligence
+## 📄 Document Intelligence
 
 ```text
 File Upload
@@ -966,9 +930,9 @@ RAG
 Gemini
 ```
 
-## AI Tools
+## 🔎 AI Tools
 
-Potential tools include:
+Future capabilities may include:
 
 * Web search
 * Deep research
@@ -979,9 +943,7 @@ Potential tools include:
 * Voice interaction
 * AI agents
 
-## Advanced AI Architecture
-
-Future versions can evolve toward:
+## 🧠 Advanced AI Architecture
 
 ```text
                     Nexora AI
@@ -999,9 +961,15 @@ Future versions can evolve toward:
 
 ---
 
-# Environment Variables
+# 🔧 Environment Variables
 
-Create a `.env` file inside the backend:
+## Backend
+
+Create:
+
+```text
+backend/.env
+```
 
 ```env
 PORT=5000
@@ -1011,64 +979,7 @@ JWT_SECRET=YOUR_LONG_RANDOM_SECRET
 ADMIN_PAYMENT_SECRET=YOUR_ADMIN_PAYMENT_SECRET
 ```
 
-Frontend environment:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000
-```
-
-Never commit real API keys, database credentials, JWT secrets, or admin secrets to GitHub.
-
----
-
-# Local Development
-
-## 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-cd "AI-chatbot Application"
-```
-
-## 2. Install backend dependencies
-
-```bash
-cd backend
-npm install
-```
-
-## 3. Configure backend environment
-
-Create:
-
-```text
-backend/.env
-```
-
-and add the required environment variables.
-
-## 4. Start backend
-
-```bash
-npm run dev
-```
-
-The backend runs on:
-
-```text
-http://localhost:5000
-```
-
-## 5. Install frontend dependencies
-
-Open another terminal:
-
-```bash
-cd frontend
-npm install
-```
-
-## 6. Configure frontend environment
+## Frontend
 
 Create:
 
@@ -1080,13 +991,80 @@ frontend/.env.local
 NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
-## 7. Start frontend
+For production, set:
+
+```env
+NEXT_PUBLIC_API_URL=https://ai-chatbot-application-nam9.onrender.com
+```
+
+> Never commit API keys, database credentials, JWT secrets, or admin secrets to GitHub.
+
+---
+
+# 💻 Local Development
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/Abdullah-Asim-dev/AI-Chatbot-Application.git
+cd "AI-chatbot Application"
+```
+
+## 2. Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create:
+
+```text
+backend/.env
+```
+
+Add the required environment variables.
+
+Start the backend:
 
 ```bash
 npm run dev
 ```
 
-The frontend runs on:
+Backend:
+
+```text
+http://localhost:5000
+```
+
+## 3. Frontend Setup
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+```
+
+Create:
+
+```text
+frontend/.env.local
+```
+
+Add:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+Start the frontend:
+
+```bash
+npm run dev
+```
+
+Frontend:
 
 ```text
 http://localhost:3000
@@ -1094,17 +1072,62 @@ http://localhost:3000
 
 ---
 
-# Production Considerations
+# ☁️ Production Deployment
 
-Before deploying Nexora AI as a public SaaS product, several areas should be strengthened.
+### Frontend
+
+Deployed with:
+
+**Vercel**
+
+```text
+https://ai-chatbot-application-teal.vercel.app/
+```
+
+### Backend
+
+Deployed with:
+
+**Render**
+
+```text
+https://ai-chatbot-application-nam9.onrender.com
+```
+
+### Production Architecture
+
+```text
+                 ┌─────────────────────┐
+                 │      Vercel         │
+                 │   Next.js Frontend  │
+                 └──────────┬──────────┘
+                            │
+                            │ HTTPS
+                            ▼
+                 ┌─────────────────────┐
+                 │       Render        │
+                 │ Node + Express API  │
+                 └───────┬───────┬─────┘
+                         │       │
+                         ▼       ▼
+                  ┌──────────┐  ┌─────────────┐
+                  │ MongoDB  │  │ Gemini API  │
+                  └──────────┘  └─────────────┘
+```
+
+---
+
+# 🛡️ Production Considerations
+
+Before operating Nexora AI as a large public SaaS platform, the following areas should be strengthened.
 
 ### Payments
 
-Replace the MVP manual verification flow with official provider integrations where available.
+Replace the MVP manual verification workflow with official payment-provider integrations where available.
 
 ### Admin Security
 
-Replace the static admin payment secret with proper role-based admin authentication.
+Replace the static admin payment secret with role-based admin authentication.
 
 ### API Security
 
@@ -1112,10 +1135,10 @@ Add:
 
 * Rate limiting
 * Request validation
-* Stronger CORS configuration
 * Security headers
 * Abuse prevention
 * Request logging
+* Production CORS configuration
 
 ### AI Reliability
 
@@ -1135,21 +1158,19 @@ Add:
 * Secure uploads
 * File-size limits
 * MIME validation
-* Virus/malware scanning
+* Malware scanning
 * Text extraction
-* Storage
+* File storage
 * Document indexing
 * RAG pipeline
 
 ---
 
-# Architecture Principles
-
-Nexora AI follows several important engineering principles:
+# 🧱 Architecture Principles
 
 ### Separation of Concerns
 
-Frontend, routes, controllers, services, middleware, and database models have distinct responsibilities.
+Frontend, routes, controllers, services, middleware, and database models have separate responsibilities.
 
 ### Backend as the Source of Truth
 
@@ -1157,28 +1178,29 @@ Authentication, subscription status, message limits, and payment validation are 
 
 ### Provider Abstraction
 
-Gemini integration is isolated inside a service layer so the AI provider can evolve independently.
+Gemini integration is isolated inside a service layer.
 
 ### Persistent State
 
-Conversations and user data are stored in MongoDB rather than relying exclusively on browser state.
+Users, conversations, and payments are persisted in MongoDB.
 
 ### Extensibility
 
-The current architecture is designed so future AI tools and capabilities can be added without rebuilding the entire application.
+The architecture is designed so future AI tools and services can be added without rebuilding the entire application.
 
 ---
 
-# Current Status
+# ✅ Current Status
 
 ### Completed
 
 * [x] Next.js AI workspace
 * [x] Responsive chat interface
-* [x] Authentication
-* [x] JWT protection
+* [x] User registration
+* [x] User login
+* [x] JWT authentication
 * [x] MongoDB integration
-* [x] Gemini integration
+* [x] Gemini AI integration
 * [x] Persistent conversations
 * [x] Conversation history
 * [x] Conversation deletion
@@ -1189,12 +1211,14 @@ The current architecture is designed so future AI tools and capabilities can be 
 * [x] Payoneer payment workflow
 * [x] Transaction ID submission
 * [x] Admin payment dashboard
-* [x] Server-side Rs.999 minimum payment validation
+* [x] Server-side Rs.999 payment validation
 * [x] Payment history
 * [x] Responsive mobile sidebar
 * [x] File picker UI
+* [x] Production frontend deployment
+* [x] Production backend deployment
 
-### Future
+### 🔮 Future
 
 * [ ] AI streaming
 * [ ] Markdown rendering
@@ -1214,38 +1238,56 @@ The current architecture is designed so future AI tools and capabilities can be 
 
 ---
 
-# Why Nexora AI?
+# 🎯 Why Nexora AI?
 
-Nexora AI is built as a foundation for a broader AI SaaS ecosystem rather than as a single-purpose chatbot.
+Nexora AI is designed as a foundation for a broader AI SaaS ecosystem rather than a simple chatbot.
 
-Its architecture already separates:
+The architecture separates:
 
 ```text
 UI
-│
-├── Application State
-│
-├── REST API
-│
-├── Authentication
-│
-├── Business Logic
-│
-├── AI Service
-│
-├── Subscription System
-│
-├── Payment System
-│
-└── Database
+ │
+ ├── Application State
+ │
+ ├── REST API
+ │
+ ├── Authentication
+ │
+ ├── Business Logic
+ │
+ ├── AI Service
+ │
+ ├── Subscription System
+ │
+ ├── Payment System
+ │
+ └── Database
 ```
 
-This makes the project easier to maintain, extend, debug, and scale as new AI capabilities are introduced.
+This makes the project easier to maintain, extend, debug, and evolve as new AI capabilities are introduced.
 
 ---
 
-# License
+# 📄 License
 
 This project is currently intended as a personal/professional portfolio and SaaS development project.
 
-Add an appropriate open-source license here if the repository is intended to be distributed publicly under one.
+Add an appropriate open-source license if the repository is later intended for public distribution under specific licensing terms.
+
+---
+
+## 👨‍💻 Developed By
+
+<p align="center">
+  <strong>Abdullah Asim</strong>
+  <br />
+  Full-Stack Developer
+  <br /><br />
+  <a href="https://github.com/Abdullah-Asim-dev">GitHub</a>
+  •
+  <a href="https://www.linkedin.com/in/abdullah-asim-dev/">LinkedIn</a>
+</p>
+
+<p align="center">
+  ⭐ If you find Nexora AI interesting, consider giving the repository a star.
+</p>
