@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070a0f;
+  --foreground: #f8fafc;
+
+  --surface: #0d1117;
+  --surface-light: #111827;
+
+  --border: rgba(148, 163, 184, 0.1);
+
+  --primary: #22d3ee;
+  --primary-blue: #3b82f6;
+  --primary-violet: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+textarea {
+  outline: none;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.22);
+  color: #ffffff;
+}
+
+/* -------------------------------- */
+/* Scrollbar */
+/* -------------------------------- */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.16);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.28);
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(148, 163, 184, 0.16)
+    transparent;
+}
+
+/* -------------------------------- */
+/* Gradient Text */
+/* -------------------------------- */
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    #22d3ee 0%,
+    #3b82f6 50%,
+    #8b5cf6 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* -------------------------------- */
+/* Premium Glow */
+/* -------------------------------- */
+
+.ai-glow {
+  box-shadow:
+    0 0 40px rgba(34, 211, 238, 0.07),
+    0 0 80px rgba(59, 130, 246, 0.04);
+}
+
+/* -------------------------------- */
+/* Glass Surface */
+/* -------------------------------- */
+
+.glass {
+  background: rgba(13, 17, 23, 0.78);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border);
+}
+
+/* -------------------------------- */
+/* Focus */
+/* -------------------------------- */
+
+:focus-visible {
+  outline: 1px solid rgba(34, 211, 238, 0.45);
+  outline-offset: 2px;
+}
+
+/* -------------------------------- */
+/* Mobile Tap */
+/* -------------------------------- */
+
+@media (max-width: 640px) {
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* -------------------------------- */
+/* Reduced Motion */
+/* -------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
