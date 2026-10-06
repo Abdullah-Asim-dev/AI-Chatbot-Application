@@ -1,5 +1,7 @@
 const dns = require("dns");
+
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -16,7 +18,15 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+// Allow requests from the deployed frontend
+app.use(
+  cors({
+    origin: "https://ai-chatbot-application-teal.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-admin-payment-secret"],
+  })
+);
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -34,6 +44,6 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
