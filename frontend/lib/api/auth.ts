@@ -1,6 +1,6 @@
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
-  "http://localhost:5000";
+  "https://ai-chatbot-application-nam9.onrender.com";
 
 export interface RegisterData {
   name: string;
